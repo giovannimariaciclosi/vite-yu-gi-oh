@@ -28,6 +28,7 @@ export default {
       // console.log(res.data.data);
       this.store.cards = res.data.data;
     });
+
   },
 }
 
@@ -37,11 +38,10 @@ export default {
   <h1>Your Deck:</h1>
   <div id="cards-container">
 
-    <CardItem v-for="card in store.cards" :card="card">
-      <div v-for="image in store.cards.card_images" :key="card">
-        <img :src="image" alt="">
-      </div>
+    <div class="loading" v-if="store.cards.length < 50">LOADING...</div>
+    <CardItem v-for="card in store.cards" :card="card" v-else>
     </CardItem>
+
 
   </div>
 </template>
@@ -57,5 +57,10 @@ h1 {
   flex-flow: row wrap;
   justify-content: center;
   gap: 50px;
+
+  .loading {
+    font-size: 2em;
+  }
+
 }
 </style>

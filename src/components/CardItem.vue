@@ -22,12 +22,12 @@ export default {
   <div class="card">
     <div class="name">{{ card.name }}</div>
     <div class="type">{{ card.type }}</div>
+    <img class="image" :src="card.card_images[0].image_url" alt="">
     <div class="desc">{{ card.desc }}</div>
-    <div class="race">{{ card.race }}</div>
+    <div class="race">Race: {{ card.race }}</div>
+    <div class="id">ID: {{ card.id }}</div>
+    <div class="price">Market Price: <strong>{{ card.card_prices[0].cardmarket_price }} $</strong></div>
 
-
-    <!-- <div class="image">{{ card.card_images }}</div> -->
-    <!-- <img :src="card.card_images" alt=""> -->
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default {
   display: flex;
   flex-direction: column;
 
-  width: 400px;
+  width: 300px;
 
   .name {
     font-weight: bold;
@@ -44,6 +44,10 @@ export default {
 
   .type {
     font-style: italic;
+  }
+
+  .image {
+    padding: .5em 0;
   }
 
   .desc {
@@ -54,7 +58,16 @@ export default {
   .race {
     font-size: .8em;
     font-weight: bold;
+    padding-top: .2em;
+  }
+
+  .id {
     padding-top: .5em;
+    font-size: .7em;
+  }
+
+  .price {
+    text-align: center;
   }
 }
 </style>

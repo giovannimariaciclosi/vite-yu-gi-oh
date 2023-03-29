@@ -31,7 +31,7 @@ export default {
       this.store.cards = res.data.data;
 
       this.store.isLoading = false;
-
+      this.store.totalCardFound = this.store.cards.length;
 
     });
   },
@@ -55,6 +55,7 @@ export default {
         console.log(res.data.data);
 
         this.store.cards = res.data.data;
+        this.store.totalCardFound = this.store.cards.length;
       });
     },
 

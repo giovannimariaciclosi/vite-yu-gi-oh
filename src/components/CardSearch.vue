@@ -25,6 +25,10 @@ export default {
     <button @click="$emit('searchCard')">Cerca</button>
 
   </div>
+
+  <div id="total-cards">
+    <span>Found {{ store.totalCardFound }} cards</span>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -53,6 +57,18 @@ export default {
     background-color: white;
     color: black;
   }
+}
 
+#total-cards {
+  text-align: center;
+  padding: 20px;
+  background-color: #d48f38;
+  padding-bottom: 4em;
+
+  span {
+    background-color: #242424;
+    padding: 1em;
+    border-radius: 10px;
+  }
 }
 </style>

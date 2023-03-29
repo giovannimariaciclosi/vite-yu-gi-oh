@@ -66,10 +66,6 @@ export default {
 </script>
   
 <template>
-  <h1>Your Deck:</h1>
-
-
-
   <CardSearch @searchCard="search()"></CardSearch>
   <div id="cards-container">
 
@@ -82,11 +78,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h1 {
-  padding: 2em;
-  text-align: center;
-}
-
 #cards-container {
   display: flex;
   flex-flow: row wrap;

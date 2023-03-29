@@ -1,4 +1,5 @@
 <script>
+import AppHeader from './components/AppHeader.vue';
 import AppLoader from './components/AppLoader.vue';
 import AppMain from './components/AppMain.vue';
 
@@ -13,13 +14,14 @@ export default {
 
     };
   },
-  components: { AppMain, AppLoader }
+  components: { AppMain, AppLoader, AppHeader }
 }
 
 </script>
 
 <template>
   <div>
+    <AppHeader></AppHeader>
     <AppMain></AppMain>
     <AppLoader v-if="store.isLoading"></AppLoader>
   </div>

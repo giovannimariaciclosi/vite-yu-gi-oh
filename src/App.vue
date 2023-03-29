@@ -1,11 +1,19 @@
 <script>
+import AppLoader from './components/AppLoader.vue';
 import AppMain from './components/AppMain.vue';
+
+import { store } from "./store";
+
 
 export default {
   data() {
-    return {};
+    return {
+
+      store,
+
+    };
   },
-  components: { AppMain }
+  components: { AppMain, AppLoader }
 }
 
 </script>
@@ -13,6 +21,7 @@ export default {
 <template>
   <div>
     <AppMain></AppMain>
+    <AppLoader v-if="store.isLoading"></AppLoader>
   </div>
 </template>
 
